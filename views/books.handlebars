@@ -1,0 +1,13 @@
+<h1>Livros disponíveis</h1>
+<div class="books-container">
+  {{#each books}}
+  <div class="divs-container" > <span class="id">#{{this.id}} - </span><a class="nomeLivro" href="/books/{{this.id}}"><span class="bold">{{this.title}}</span></a><span class="paginas">{{this.pageqty}} páginas</span>
+  <div class="botoes-div">
+    <form action="/books/remove/{{this.id}}" method="post">
+    <button type="submit" class="deletar botao">deletar</button> 
+    </form>
+    <button class="editarInfos deletar botao">Editar</button>
+  </div>
+  </div>
+  {{/each}}
+</div>
