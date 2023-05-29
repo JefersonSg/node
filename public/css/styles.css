@@ -12,6 +12,7 @@
   display: grid;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 #navbar ul{
   display: flex;
@@ -25,19 +26,33 @@ text-decoration: none;
 }
 h1{
   text-align: center;
-  padding: 40px;
+  padding: 40px 0;
+  font-size: 30px;
+  width: 100%;
 }
 
 .formulario,.books-container,#book-page{
-  width: 450px;
+  width: 300px;
   margin: 0 auto;
   display: grid;
   justify-content: center;
   gap: 16px;
 }
+.formulario2{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+  height: 200px;
+  gap: 20px 0px;
+}
+.books-container{
+  gap: 0;
+  box-sizing: border-box;
+}
 .form-control{
   display: grid;
-  grid-template-columns: 150px 200px;
+  grid-template-columns: 150px 150px;
   gap: 10px;
   align-items: center;
 }
@@ -45,25 +60,66 @@ h1{
 input{
   padding: 0.3rem;
 }
-
+@media (min-width:500px) {
+  .formulario,.books-container,#book-page{
+    width: 450px;
+  }
+  .form-control{
+    grid-template-columns: 150px 200px;
+  }
+}
 
 /* BOOKS */
 
 .divs-container{
+  width: 300px;
   border-bottom: 1px solid #ccc;
   display: grid;
-  grid-template-columns: 40px 200px 100px max-content;
+  grid-template-columns: max-content 150px 100px;
+  justify-content: center;
   align-items: center;
-  gap:0 30px;
+  gap:0px 10px;
   padding: 5px;
   margin: 5px;
 }
+.divs-container span {
+  padding: 8px 0;
+}
+.botoes-div{
+  grid-column: 1/-1;
+  margin: 0 auto;
+}
 .formularioEdit {
   display: grid;
-  grid-template-columns: 40px 200px 100px 80px;
+  grid-template-columns: max-content 150px 100px;
   align-items: center;
-  gap: 0 30px;
-  height: max-content;
+  gap:4px 20px;
+  width: 330px;
+}
+
+
+@media (min-width:550px) {
+  .books-container{
+    width: 500px;
+  }
+  .divs-container{
+    width: 450px;
+    grid-template-columns: max-content 100px 100px max-content;
+    gap:0px 20px;
+    padding: 5px;
+    margin: 5px;
+  }
+  .botoes-div{
+    grid-column: 5;
+    margin: 0;
+  }
+  .formularioEdit {
+    display: grid;
+    grid-template-columns: max-content 150px 100px max-content;
+    align-items: center;
+    gap:4px 20px;
+    width: 330px;
+  }
 }
 
 .bold{
